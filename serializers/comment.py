@@ -10,7 +10,6 @@ class CommentSchema(BaseModel):
 
 
 class CreateCommentSchema(BaseModel):
-    name: str
     content: str
 
     class Config:
@@ -18,7 +17,6 @@ class CreateCommentSchema(BaseModel):
 
 
 class UpdateCommentSchema(BaseModel):
-    name: str
     content: str
 
     class Config:

@@ -26,10 +26,6 @@ router = APIRouter()
 #     return comment
 
 
-# # @router.post("/comments", response_model=CommentSchema):
-# # def create_comment(comment: CreateCommentSchema)
-
-
 @router.get("/teas/{tea_id}/comments", response_model=List[CommentSchema])
 def get_comments_for_tea(tea_id: int, db: Session = Depends(get_db)):
     tea = db.query(TeaModel).filter(TeaModel.id == tea_id).first()
